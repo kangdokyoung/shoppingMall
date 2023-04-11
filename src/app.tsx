@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Banner from "./component/banner/Banner";
 import MainPage from "./page/MainPage";
+import { RecoilRoot } from "recoil";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App: React.FC = () => {
   return (
-    <>
+    <RecoilRoot>
       <GlobalStyle />
       {
         <BrowserRouter>
@@ -24,7 +25,7 @@ const App: React.FC = () => {
           </Routes>
         </BrowserRouter>
       }
-    </>
+    </RecoilRoot>
   );
 };
 

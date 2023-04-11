@@ -1,8 +1,15 @@
 import React from "react";
-import Banner from "../component/banner/Banner";
+
+import Advertise from "../component/adv/Advertise";
+import Category from "../component/category/Category";
 
 function MainPage() {
-  return <></>;
+  return (
+    <>
+      <Advertise />
+      <Category />
+    </>
+  );
 }
 
 export default MainPage;

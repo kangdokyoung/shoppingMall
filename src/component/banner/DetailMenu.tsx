@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { useRecoilState } from "recoil";
 import { AmenuToggle } from "../../atom";
+import { Link } from "react-router-dom";
 
 type Menu = {
   isClick: boolean;
@@ -78,11 +79,18 @@ function DetailMenu() {
   return (
     <SDetailMenu isClick={isClick}>
       <DetailLeft>
-        <Logo>로고</Logo>
+        <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+          <Logo>로고</Logo>
+        </Link>
       </DetailLeft>
       <DetailRight>
         <DetailList>
-          <ListMenu>로그인</ListMenu>
+          <Link
+            to={"/login"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ListMenu>로그인</ListMenu>
+          </Link>
           <ListMenu>회원가입</ListMenu>
           <ListMenu>마이페이지</ListMenu>
           <ListMenu>장바구니</ListMenu>

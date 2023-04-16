@@ -6,22 +6,25 @@ const Scontainer = styled.div`
   width: 100%;
   height: 800px;
   display: flex;
-  justifycontent: center;
+  justify-content: center;
+  margin-top: 50px;
 `;
 
 const GoodsList = styled.div`
   height: 100%;
-  width: 70%;
+  width: 80%;
   list-style: none;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 `;
 
 function MainGoods() {
+  const arr = [0, 0, 0, 0, 0, 0, 0, 0];
   return (
     <Scontainer>
       <GoodsList>
-        {Array(4).map((data, i) => {
+        {arr.map((data, i) => {
           return <MainDetail />;
         })}
       </GoodsList>

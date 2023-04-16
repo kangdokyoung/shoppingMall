@@ -99,10 +99,11 @@ const Logo = styled.div<InnerLogo>`
     }
   }}
   margin-left: 20px;
-  :hover {
-    cursor: pointer;
-  }
 `;
+
+const LogoText = styled.div`
+  cursor:pointer
+`
 
 const MoveBtn = styled.div<IsSearch>`
   font-weight: bold;
@@ -139,7 +140,7 @@ function Banner() {
         </MenuToggle>
         <DetailMenu />
         <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-          <Logo>로고</Logo>
+          <Logo><div>로고</div></Logo>
         </Link>
       </BannerLeft>
       <BannerRight>

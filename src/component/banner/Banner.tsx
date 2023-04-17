@@ -23,7 +23,7 @@ type InnerLogo = {
 
 const Scontainer = styled.div`
   position: relative;
-  min-width: 1500px;
+  min-width: 1800px;
   max-height: 80px;
   width: 100%;
   height: 12vh;
@@ -102,8 +102,8 @@ const Logo = styled.div<InnerLogo>`
 `;
 
 const LogoText = styled.div`
-  cursor:pointer
-`
+  cursor: pointer;
+`;
 
 const MoveBtn = styled.div<IsSearch>`
   font-weight: bold;
@@ -140,7 +140,9 @@ function Banner() {
         </MenuToggle>
         <DetailMenu />
         <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-          <Logo><div>로고</div></Logo>
+          <Logo>
+            <div>로고</div>
+          </Logo>
         </Link>
       </BannerLeft>
       <BannerRight>

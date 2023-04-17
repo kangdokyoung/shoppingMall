@@ -1,6 +1,7 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { useRecoilState } from "recoil";
 import { AmenuToggle, AsearchToggle } from "../../atom";
@@ -98,10 +99,11 @@ const Logo = styled.div<InnerLogo>`
     }
   }}
   margin-left: 20px;
-  :hover {
-    cursor: pointer;
-  }
 `;
+
+const LogoText = styled.div`
+  cursor:pointer
+`
 
 const MoveBtn = styled.div<IsSearch>`
   font-weight: bold;
@@ -137,11 +139,14 @@ function Banner() {
           <MenuSpan isClick={isClick} index={3} />
         </MenuToggle>
         <DetailMenu />
-
-        <Logo>로고</Logo>
+        <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+          <Logo><div>로고</div></Logo>
+        </Link>
       </BannerLeft>
       <BannerRight>
-        <MoveBtn>로그인</MoveBtn>
+        <Link to={"/login"} style={{ textDecoration: "none", color: "black" }}>
+          <MoveBtn>로그인</MoveBtn>
+        </Link>
         <MoveBtn>회원가입</MoveBtn>
         <MoveBtn>문의</MoveBtn>
         <MoveBtn

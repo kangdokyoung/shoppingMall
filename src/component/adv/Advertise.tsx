@@ -23,7 +23,7 @@ function Advertise() {
   const imgList = ["https://ifh.cc/g/SHnt9j.png"];
   return (
     <Scontainer>
-      <SadvImg src={imgList[0]} />
+      <SadvImg src={imgList[0]} alt="advertisement" />
     </Scontainer>
   );
 }

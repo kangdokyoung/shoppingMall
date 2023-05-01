@@ -4,6 +4,7 @@ import MainDetail from "./MainDetail";
 
 const Scontainer = styled.div`
   width: 100%;
+  min-width: 1800px;
   height: 800px;
   display: flex;
   justify-content: center;

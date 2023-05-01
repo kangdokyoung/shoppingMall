@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Scontainer = styled.div`
-  min-width: 1500px;
+  min-width: 1800px;
   width: 100%;
   height: 50vh;
   transition: all 0.1s;

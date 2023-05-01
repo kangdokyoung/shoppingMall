@@ -74,7 +74,7 @@ const Logo = styled.div`
 `;
 
 function DetailMenu() {
-  const [isClick] = useRecoilState(AmenuToggle);
+  const [isClick, setIsClick] = useRecoilState(AmenuToggle);
 
   return (
     <SDetailMenu isClick={isClick}>
@@ -89,7 +89,7 @@ function DetailMenu() {
             to={"/login"}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <ListMenu>로그인</ListMenu>
+            <ListMenu onClick={() => setIsClick((e) => !e)}>로그인</ListMenu>
           </Link>
           <ListMenu>회원가입</ListMenu>
           <ListMenu>마이페이지</ListMenu>

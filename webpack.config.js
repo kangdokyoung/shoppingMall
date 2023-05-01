@@ -16,6 +16,7 @@ module.exports = (env, argv) => {
       filename: "[name].js", // 출력되는 파일 이름
     },
     devServer: {
+      historyApiFallback:true, // 새로고침 했을 때 404 에러뜨는거 방지
       port: 3000, // 웹팩 개발서버를 돌렸을 때 돌아갈 포트번호
       hot: true, // 저장시 바로 화면에 적용되게 끔 하기위한 핫 리로더
     },

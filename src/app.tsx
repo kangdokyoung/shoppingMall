@@ -5,6 +5,7 @@ import Banner from "./component/banner/Banner";
 import MainPage from "./page/MainPage";
 import { RecoilRoot } from "recoil";
 import LoginPage from "./page/LoginPage";
+import SignUpPage from "./page/SignUpPage";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
           </Routes>
         </BrowserRouter>
       }

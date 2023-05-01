@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Scontainer = styled.div`
-  min-width: 1500px;
+  min-width: 1800px;
   max-height: 60px;
   width: 100%;
   height: 6vh;

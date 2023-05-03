@@ -26,7 +26,7 @@ function MainGoods() {
     <Scontainer>
       <GoodsList>
         {arr.map((data, i) => {
-          return <MainDetail />;
+          return <MainDetail key={i} />;
         })}
       </GoodsList>
     </Scontainer>

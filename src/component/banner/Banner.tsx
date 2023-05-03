@@ -149,7 +149,9 @@ function Banner() {
         <Link to={"/login"} style={{ textDecoration: "none", color: "black" }}>
           <MoveBtn>로그인</MoveBtn>
         </Link>
-        <MoveBtn>회원가입</MoveBtn>
+        <Link to={"/signup"} style={{ textDecoration: "none", color: "black" }}>
+          <MoveBtn>회원가입</MoveBtn>
+        </Link>
         <MoveBtn>문의</MoveBtn>
         <MoveBtn
           search={true}

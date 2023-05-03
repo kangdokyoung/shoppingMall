@@ -91,7 +91,12 @@ function DetailMenu() {
           >
             <ListMenu onClick={() => setIsClick((e) => !e)}>로그인</ListMenu>
           </Link>
-          <ListMenu>회원가입</ListMenu>
+          <Link
+            to={"/signup"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ListMenu onClick={() => setIsClick((e) => !e)}>회원가입</ListMenu>
+          </Link>
           <ListMenu>마이페이지</ListMenu>
           <ListMenu>장바구니</ListMenu>
         </DetailList>

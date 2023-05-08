@@ -97,14 +97,21 @@ function DetailMenu() {
           >
             <ListMenu onClick={() => setIsClick((e) => !e)}>회원가입</ListMenu>
           </Link>
-          <ListMenu>마이페이지</ListMenu>
-          <ListMenu>장바구니</ListMenu>
+          <Link
+            to={"/mypage"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ListMenu onClick={() => setIsClick((e) => !e)}>
+              마이페이지
+            </ListMenu>
+          </Link>
+          <ListMenu onClick={() => setIsClick((e) => !e)}>장바구니</ListMenu>
         </DetailList>
 
         <DetailList>
-          <ListMenu>공지사항</ListMenu>
-          <ListMenu>Q&A</ListMenu>
-          <ListMenu>1:1 문의</ListMenu>
+          <ListMenu onClick={() => setIsClick((e) => !e)}>공지사항</ListMenu>
+          <ListMenu onClick={() => setIsClick((e) => !e)}>Q&A</ListMenu>
+          <ListMenu onClick={() => setIsClick((e) => !e)}>1:1 문의</ListMenu>
         </DetailList>
       </DetailRight>
     </SDetailMenu>

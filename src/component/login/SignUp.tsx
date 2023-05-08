@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import InputBox from "./InputBox";
 
@@ -10,16 +9,16 @@ const Scontainer = styled.div`
   min-height: 800px;
 `;
 
-const SLoginContainer = styled.div`
+const SsignUpContainer = styled.div`
   width: 60%;
   height: 70%;
   display: flex;
   justify-content: center;
 `;
 
-const SLoginBox = styled.form`
+const SsignUpBox = styled.form`
   width: 70%;
-  height: 80%;
+  height: 100%;
   background-color: lightgrey;
   display: flex;
   justify-content: space-evenly;
@@ -28,7 +27,7 @@ const SLoginBox = styled.form`
   margin-top: 10%;
 `;
 
-const Stitle = styled.label`
+const Stitle = styled.div`
   height: 15%;
   font-weight: bold;
   font-size: 30px;
@@ -51,16 +50,7 @@ const Sinput = styled.input`
   width: 70%;
 `;
 
-const Ssignbtn = styled.div`
-  width: 80%;
-  text-align: right;
-  font-weight: bold;
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const SLoginBtn = styled.button`
+const SsignUpBtn = styled.button`
   width: 80%;
   background-color: black;
   color: white;
@@ -71,30 +61,26 @@ const SLoginBtn = styled.button`
   padding-bottom: 20px;
 `;
 
-function Login() {
+function SignUp() {
+  const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-
+  const [email, setEmail] = useState("");
   return (
     <Scontainer>
-      <SLoginContainer>
-        <SLoginBox>
-          <Stitle>로그인</Stitle>
+      <SsignUpContainer>
+        <SsignUpBox>
+          <Stitle>회원가입</Stitle>
+          <InputBox name={"이름"} value={name} set={setName} />
           <InputBox name={"ID"} value={id} set={setId} />
           <InputBox name={"PW"} value={password} set={setPassword} />
-          <Ssignbtn>
-            <Link
-              to={"/signup"}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              회원가입
-            </Link>
-          </Ssignbtn>
-          <SLoginBtn type="submit">로그인</SLoginBtn>
-        </SLoginBox>
-      </SLoginContainer>
+          <InputBox name={"E-mail"} value={email} set={setEmail} />
+
+          <SsignUpBtn type="submit">회원가입</SsignUpBtn>
+        </SsignUpBox>
+      </SsignUpContainer>
     </Scontainer>
   );
 }
 
-export default Login;
+export default SignUp;

@@ -1,10 +1,8 @@
-import React from 'react';
-import SignUp from '../component/signup/SignUp';
+import React from "react";
+import SignUp from "../component/login/SignUp";
 
 function SignUpPage() {
-    return (
-        <SignUp></SignUp>
-    );
+  return <SignUp></SignUp>;
 }
 
 export default SignUpPage;

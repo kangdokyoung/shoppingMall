@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MainGoods from "../mainGoods/MainGoods";
+import InfoChange from "./InfoChange";
 
 const Scontainer = styled.div`
   height: 450px;
@@ -74,16 +75,24 @@ const SinfoBox = (props: { title: string; detail: string }) => {
 };
 
 function My() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Scontainer>
+        <InfoChange isOpen={isOpen} setIsOpen={setIsOpen} />
         <Sinfo>
           <SinfoBox title="이름" detail="강도경" />
           <SinfoBox title="ID" detail="아이디" />
           <SinfoBox title="E-mail" detail="이메일" />
           <SinfoBox title="주소" detail="주소" />
           <SchangeInfo>
-            <Stext>정보 수정</Stext>
+            <Stext
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
+              정보 수정
+            </Stext>
           </SchangeInfo>
         </Sinfo>
       </Scontainer>

@@ -18,7 +18,7 @@ const Sinput = styled.input`
 
 type inputProps = {
   name: any;
-  set: any;
+  set?: any;
   value: any;
 };
 

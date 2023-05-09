@@ -110,7 +110,9 @@ function DetailMenu() {
 
         <DetailList>
           <ListMenu onClick={() => setIsClick((e) => !e)}>공지사항</ListMenu>
-          <ListMenu onClick={() => setIsClick((e) => !e)}>Q&A</ListMenu>
+          <Link to={"/qna"} style={{ textDecoration: "none", color: "black" }}>
+            <ListMenu onClick={() => setIsClick((e) => !e)}>Q&A</ListMenu>
+          </Link>
           <ListMenu onClick={() => setIsClick((e) => !e)}>1:1 문의</ListMenu>
         </DetailList>
       </DetailRight>

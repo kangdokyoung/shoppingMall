@@ -7,6 +7,7 @@ import { RecoilRoot } from "recoil";
 import LoginPage from "./page/LoginPage";
 import SignUpPage from "./page/SignUpPage";
 import MyPage from "./page/MyPage";
+import QnaPage from "./page/QnaPage";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/mypage" element={<MyPage />} />
+            <Route path="/qna" element={<QnaPage />} />
           </Routes>
         </BrowserRouter>
       }

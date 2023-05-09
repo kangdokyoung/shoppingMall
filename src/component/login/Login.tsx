@@ -36,21 +36,6 @@ const Stitle = styled.label`
   padding-top: 20px;
 `;
 
-const SBox = styled.div`
-  width: 80%;
-  height: 60px;
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`;
-
-const Sinput = styled.input`
-  border: none;
-  height: 70%;
-  width: 70%;
-`;
-
 const Ssignbtn = styled.div`
   width: 80%;
   text-align: right;

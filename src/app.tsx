@@ -3,11 +3,14 @@ import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Banner from "./component/banner/Banner";
 import MainPage from "./page/MainPage";
-import { RecoilRoot } from "recoil";
 import LoginPage from "./page/LoginPage";
 import SignUpPage from "./page/SignUpPage";
 import MyPage from "./page/MyPage";
 import QnaPage from "./page/QnaPage";
+import BasketPage from "./page/BasketPage";
+import OrderDetailPage from "./page/OrderDetailPage";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -19,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App: React.FC = () => {
   return (
-    <RecoilRoot>
+    <Provider store={store}>
       <GlobalStyle />
       {
         <BrowserRouter>
@@ -30,10 +33,12 @@ const App: React.FC = () => {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/mypage" element={<MyPage />} />
             <Route path="/qna" element={<QnaPage />} />
+            <Route path="/basket" element={<BasketPage />} />
+            <Route path="/orderDetail" element={<OrderDetailPage />} />
           </Routes>
         </BrowserRouter>
       }
-    </RecoilRoot>
+    </Provider>
   );
 };
 

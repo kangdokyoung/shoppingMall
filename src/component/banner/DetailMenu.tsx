@@ -105,7 +105,12 @@ function DetailMenu() {
               마이페이지
             </ListMenu>
           </Link>
-          <ListMenu onClick={() => setIsClick((e) => !e)}>장바구니</ListMenu>
+          <Link
+            to={"/basket"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ListMenu onClick={() => setIsClick((e) => !e)}>장바구니</ListMenu>
+          </Link>
         </DetailList>
 
         <DetailList>

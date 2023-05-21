@@ -10,7 +10,8 @@ import QnaPage from "./page/QnaPage";
 import BasketPage from "./page/BasketPage";
 import OrderDetailPage from "./page/OrderDetailPage";
 import { Provider } from "react-redux";
-import store from "./store";
+import { legacy_createStore as createStore } from "redux";
+import rootReducer from "./module";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -19,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
   margin: 0px;
 }
 `;
+
+const store = createStore(rootReducer);
 
 const App: React.FC = () => {
   return (

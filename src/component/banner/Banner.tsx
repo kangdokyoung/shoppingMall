@@ -1,13 +1,12 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 import styled, { css } from "styled-components";
 import DetailMenu from "./DetailMenu";
 import Search from "./Search";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../module";
-import { toggleFalse, toggleTrue } from "../../module/toggleChange";
+import { useRecoilState } from "recoil";
+import { AmenuToggle, AsearchToggle } from "../../atom";
 
 interface Span {
   isClick: boolean;
@@ -120,28 +119,20 @@ const MoveBtn = styled.div<IsSearch>`
 `;
 
 function Banner() {
-  const bannerToggle = useSelector((state: RootState) => state.toggleChange);
-  const dispatch = useDispatch();
-
-  const changeState = () => {
-    if (bannerToggle.bannerToggle == true) {
-      dispatch(toggleFalse());
-    } else {
-      dispatch(toggleTrue());
-    }
-  };
+  const [isClick, setIsClick] = useRecoilState(AmenuToggle);
+  const [isSearch, setIsSearch] = useRecoilState(AsearchToggle);
 
   return (
     <Scontainer>
       <BannerLeft>
         <MenuToggle
           onClick={() => {
-            changeState();
+            setIsClick((prop) => !prop);
           }}
         >
-          <MenuSpan isClick={bannerToggle.bannerToggle} index={1} />
-          <MenuSpan isClick={bannerToggle.bannerToggle} index={2} />
-          <MenuSpan isClick={bannerToggle.bannerToggle} index={3} />
+          <MenuSpan isClick={isClick} index={1} />
+          <MenuSpan isClick={isClick} index={2} />
+          <MenuSpan isClick={isClick} index={3} />
         </MenuToggle>
         <DetailMenu />
         <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
@@ -158,7 +149,12 @@ function Banner() {
           <MoveBtn>회원가입</MoveBtn>
         </Link>
         <MoveBtn>문의</MoveBtn>
-        <MoveBtn search={true} onClick={() => {}}>
+        <MoveBtn
+          search={true}
+          onClick={() => {
+            setIsSearch((prop) => !prop);
+          }}
+        >
           <FontAwesomeIcon icon={faSearch} size="2x" />
         </MoveBtn>
       </BannerRight>

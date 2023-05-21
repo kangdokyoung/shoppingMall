@@ -61,9 +61,9 @@ const SinputBtn = styled.button`
 `;
 
 function Search() {
-  const bannerToggle = useSelector((state: RootState) => state.toggleChange);
+  const [isSearch, setIsSearch] = useRecoilState(AsearchToggle);
   return (
-    <Scontainer isClick={bannerToggle.bannerToggle}>
+    <Scontainer isClick={isSearch}>
       <Stext>검색</Stext>
       <Sinput type="text" placeholder="검색어를 입력하시오" />
       <SinputBtn>GO</SinputBtn>

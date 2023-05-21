@@ -3,9 +3,6 @@ import styled, { css } from "styled-components";
 import { useRecoilState } from "recoil";
 import { AmenuToggle } from "../../atom";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../module";
-import { toggleFalse, toggleTrue } from "../../module/toggleChange";
 
 type Menu = {
   isClick: boolean;
@@ -77,19 +74,10 @@ const Logo = styled.div`
 `;
 
 function DetailMenu() {
-  const bannerToggle = useSelector((state: RootState) => state.toggleChange);
-  const dispatch = useDispatch();
-
-  const changeState = () => {
-    if (bannerToggle.bannerToggle == true) {
-      dispatch(toggleFalse());
-    } else {
-      dispatch(toggleTrue());
-    }
-  };
+  const [isClick, setIsClick] = useRecoilState(AmenuToggle);
 
   return (
-    <SDetailMenu isClick={bannerToggle.bannerToggle}>
+    <SDetailMenu isClick={isClick}>
       <DetailLeft>
         <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
           <Logo>로고</Logo>
@@ -101,34 +89,46 @@ function DetailMenu() {
             to={"/login"}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <ListMenu onClick={() => changeState}>로그인</ListMenu>
+            <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+              로그인
+            </ListMenu>
           </Link>
           <Link
             to={"/signup"}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <ListMenu onClick={() => changeState}>회원가입</ListMenu>
+            <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+              회원가입
+            </ListMenu>
           </Link>
           <Link
             to={"/mypage"}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <ListMenu onClick={() => changeState}>마이페이지</ListMenu>
+            <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+              마이페이지
+            </ListMenu>
           </Link>
           <Link
             to={"/basket"}
             style={{ textDecoration: "none", color: "black" }}
           >
-            <ListMenu onClick={() => changeState}>장바구니</ListMenu>
+            <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+              장바구니
+            </ListMenu>
           </Link>
         </DetailList>
 
         <DetailList>
-          <ListMenu onClick={() => changeState}>공지사항</ListMenu>
+          <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+            공지사항
+          </ListMenu>
           <Link to={"/qna"} style={{ textDecoration: "none", color: "black" }}>
-            <ListMenu onClick={() => changeState}>Q&A</ListMenu>
+            <ListMenu onClick={() => setIsClick((prop) => !prop)}>Q&A</ListMenu>
           </Link>
-          <ListMenu onClick={() => changeState}>1:1 문의</ListMenu>
+          <ListMenu onClick={() => setIsClick((prop) => !prop)}>
+            1:1 문의
+          </ListMenu>
         </DetailList>
       </DetailRight>
     </SDetailMenu>

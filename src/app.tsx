@@ -9,9 +9,7 @@ import MyPage from "./page/MyPage";
 import QnaPage from "./page/QnaPage";
 import BasketPage from "./page/BasketPage";
 import OrderDetailPage from "./page/OrderDetailPage";
-import { Provider } from "react-redux";
-import { legacy_createStore as createStore } from "redux";
-import rootReducer from "./module";
+import { RecoilRoot } from "recoil";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -21,11 +19,9 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-const store = createStore(rootReducer);
-
 const App: React.FC = () => {
   return (
-    <Provider store={store}>
+    <RecoilRoot>
       <GlobalStyle />
       {
         <BrowserRouter>
@@ -41,7 +37,7 @@ const App: React.FC = () => {
           </Routes>
         </BrowserRouter>
       }
-    </Provider>
+    </RecoilRoot>
   );
 };
 

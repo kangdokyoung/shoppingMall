@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ScheduledGoods from "./ScheduledGoods";
 
 const Scontainer = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const SscheduledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 100px;
 `;
 
 const Stitle = styled.div`
@@ -23,10 +25,15 @@ const Stitle = styled.div`
 `;
 
 const OrderDetail: React.FC = () => {
+  const list = [0];
+
   return (
     <Scontainer>
       <SscheduledContainer>
         <Stitle>배송 예정</Stitle>
+        {list.map((data, i) => {
+          return <ScheduledGoods key={i} />;
+        })}
       </SscheduledContainer>
     </Scontainer>
   );

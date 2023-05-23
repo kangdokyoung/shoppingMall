@@ -135,6 +135,14 @@ const DetailMenu: React.FC = () => {
           <ListMenu onClick={() => dispatch(changeBannerToggle())}>
             1:1 문의
           </ListMenu>
+          <Link
+            to={"/orderDetail"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ListMenu onClick={() => dispatch(changeBannerToggle())}>
+              주문 상세
+            </ListMenu>
+          </Link>
         </DetailList>
       </DetailRight>
     </SDetailMenu>

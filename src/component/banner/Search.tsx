@@ -1,11 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { useRecoilState } from "recoil";
-import { AsearchToggle } from "../../atom";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useSelector } from "react-redux";
-import { RootState } from "../../module";
+import { RootState } from "../../store";
 
 type TSearch = {
   isClick: boolean;
@@ -61,9 +57,12 @@ const SinputBtn = styled.button`
 `;
 
 function Search() {
-  const [isSearch, setIsSearch] = useRecoilState(AsearchToggle);
+  const searchToggle = useSelector(
+    (state: RootState) => state.search.searchToggle
+  );
+
   return (
-    <Scontainer isClick={isSearch}>
+    <Scontainer isClick={searchToggle}>
       <Stext>검색</Stext>
       <Sinput type="text" placeholder="검색어를 입력하시오" />
       <SinputBtn>GO</SinputBtn>

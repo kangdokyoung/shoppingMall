@@ -7,6 +7,9 @@ import DetailMenu from "./DetailMenu";
 import Search from "./Search";
 import { useRecoilState } from "recoil";
 import { AmenuToggle, AsearchToggle } from "../../atom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store";
+import { changeBannerToggle, changeSearchToggle } from "../../Slices";
 
 interface Span {
   isClick: boolean;
@@ -119,20 +122,22 @@ const MoveBtn = styled.div<IsSearch>`
 `;
 
 function Banner() {
-  const [isClick, setIsClick] = useRecoilState(AmenuToggle);
-  const [isSearch, setIsSearch] = useRecoilState(AsearchToggle);
+  const bannerToggle = useSelector(
+    (state: RootState) => state.banner.bannerToggle
+  );
+  const dispatch = useDispatch();
 
   return (
     <Scontainer>
       <BannerLeft>
         <MenuToggle
           onClick={() => {
-            setIsClick((prop) => !prop);
+            dispatch(changeBannerToggle());
           }}
         >
-          <MenuSpan isClick={isClick} index={1} />
-          <MenuSpan isClick={isClick} index={2} />
-          <MenuSpan isClick={isClick} index={3} />
+          <MenuSpan isClick={bannerToggle} index={1} />
+          <MenuSpan isClick={bannerToggle} index={2} />
+          <MenuSpan isClick={bannerToggle} index={3} />
         </MenuToggle>
         <DetailMenu />
         <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
@@ -152,7 +157,7 @@ function Banner() {
         <MoveBtn
           search={true}
           onClick={() => {
-            setIsSearch((prop) => !prop);
+            dispatch(changeSearchToggle());
           }}
         >
           <FontAwesomeIcon icon={faSearch} size="2x" />

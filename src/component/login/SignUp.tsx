@@ -61,7 +61,7 @@ const SsignUpBtn = styled.button`
   padding-bottom: 20px;
 `;
 
-function SignUp() {
+const SignUp: React.FC = () => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -81,6 +81,6 @@ function SignUp() {
       </SsignUpContainer>
     </Scontainer>
   );
-}
+};
 
 export default SignUp;

@@ -40,7 +40,7 @@ const SnameSpace = styled.div`
   cursor: pointer;
 `;
 
-function MainDetail() {
+const MainDetail: React.FC = () => {
   return (
     <Scontainer>
       <DetailModal />
@@ -54,6 +54,6 @@ function MainDetail() {
       </SgoodsBox>
     </Scontainer>
   );
-}
+};
 
 export default MainDetail;

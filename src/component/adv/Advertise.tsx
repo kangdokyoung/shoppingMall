@@ -19,13 +19,13 @@ const SadvImg = styled.img`
   height: 100%;
 `;
 
-function Advertise() {
+const Advertise: React.FC = () => {
   const imgList = ["https://ifh.cc/g/SHnt9j.png"];
   return (
     <Scontainer>
       <SadvImg src={imgList[0]} alt="advertisement" />
     </Scontainer>
   );
-}
+};
 
 export default Advertise;

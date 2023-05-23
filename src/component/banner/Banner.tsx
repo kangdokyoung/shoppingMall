@@ -1,12 +1,10 @@
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import DetailMenu from "./DetailMenu";
 import Search from "./Search";
-import { useRecoilState } from "recoil";
-import { AmenuToggle, AsearchToggle } from "../../atom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 import { changeBannerToggle, changeSearchToggle } from "../../Slices";
@@ -121,7 +119,7 @@ const MoveBtn = styled.div<IsSearch>`
   }}
 `;
 
-function Banner() {
+const Banner: React.FC = () => {
   const bannerToggle = useSelector(
     (state: RootState) => state.banner.bannerToggle
   );
@@ -166,6 +164,6 @@ function Banner() {
       <Search />
     </Scontainer>
   );
-}
+};
 
 export default Banner;

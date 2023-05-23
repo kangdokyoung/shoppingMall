@@ -20,7 +20,7 @@ const GoodsList = styled.div`
   flex-wrap: wrap;
 `;
 
-function MainGoods() {
+const MainGoods: React.FC = () => {
   const arr = [0, 0, 0, 0, 0, 0, 0, 0];
   return (
     <Scontainer>
@@ -31,6 +31,6 @@ function MainGoods() {
       </GoodsList>
     </Scontainer>
   );
-}
+};
 
 export default MainGoods;

@@ -22,7 +22,7 @@ type inputProps = {
   value: any;
 };
 
-function InputBox(props: inputProps) {
+const InputBox: React.FC<inputProps> = (props) => {
   const { name, set, value } = props;
   return (
     <SBox>
@@ -37,6 +37,6 @@ function InputBox(props: inputProps) {
       />
     </SBox>
   );
-}
+};
 
 export default InputBox;

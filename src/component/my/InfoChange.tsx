@@ -58,10 +58,12 @@ const SBtn = styled.div`
   color: white;
 `;
 
-function InfoChange(props: {
+type InfoProps = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+};
+
+const InfoChange: React.FC<InfoProps> = (props) => {
   const { isOpen, setIsOpen } = props;
   const [name, setName] = useState("");
   const [id, setId] = useState("");
@@ -88,6 +90,6 @@ function InfoChange(props: {
       </SbuttonBox>
     </SmainModal>
   );
-}
+};
 
 export default InfoChange;

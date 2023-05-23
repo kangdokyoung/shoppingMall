@@ -22,7 +22,7 @@ const Stitle = styled.div`
   border-bottom: 1px solid black;
 `;
 
-function OrderDetail() {
+const OrderDetail: React.FC = () => {
   return (
     <Scontainer>
       <SscheduledContainer>
@@ -30,6 +30,6 @@ function OrderDetail() {
       </SscheduledContainer>
     </Scontainer>
   );
-}
+};
 
 export default OrderDetail;

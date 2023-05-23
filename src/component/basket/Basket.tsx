@@ -22,7 +22,7 @@ const Stitle = styled.div`
   border-bottom: 1px solid black;
 `;
 
-function Basket() {
+const Basket: React.FC = () => {
   return (
     <Scontainer>
       <SscheduledContainer>
@@ -30,6 +30,6 @@ function Basket() {
       </SscheduledContainer>
     </Scontainer>
   );
-}
+};
 
 export default Basket;

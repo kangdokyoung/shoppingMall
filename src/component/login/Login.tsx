@@ -56,7 +56,7 @@ const SLoginBtn = styled.button`
   padding-bottom: 20px;
 `;
 
-function Login() {
+const Login: React.FC = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
@@ -80,6 +80,6 @@ function Login() {
       </SLoginContainer>
     </Scontainer>
   );
-}
+};
 
 export default Login;

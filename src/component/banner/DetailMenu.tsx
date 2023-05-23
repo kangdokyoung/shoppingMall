@@ -1,7 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { useRecoilState } from "recoil";
-import { AmenuToggle } from "../../atom";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
@@ -76,9 +74,7 @@ const Logo = styled.div`
   }
 `;
 
-function DetailMenu() {
-  const [isClick, setIsClick] = useRecoilState(AmenuToggle);
-
+const DetailMenu: React.FC = () => {
   const bannerToggle = useSelector(
     (state: RootState) => state.banner.bannerToggle
   );
@@ -143,6 +139,6 @@ function DetailMenu() {
       </DetailRight>
     </SDetailMenu>
   );
-}
+};
 
 export default DetailMenu;

@@ -74,7 +74,7 @@ const SinfoBox = (props: { title: string; detail: string }) => {
   );
 };
 
-function My() {
+const My: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -102,6 +102,6 @@ function My() {
       </SorderContainer>
     </>
   );
-}
+};
 
 export default My;

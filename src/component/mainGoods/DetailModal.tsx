@@ -28,7 +28,7 @@ const SmodalDetail = styled.li`
   cursor: pointer;
 `;
 
-function DetailModal() {
+const DetailModal: React.FC = () => {
   return (
     <Scontainer>
       <SmodalList>
@@ -44,6 +44,6 @@ function DetailModal() {
       </SmodalList>
     </Scontainer>
   );
-}
+};
 
 export default DetailModal;

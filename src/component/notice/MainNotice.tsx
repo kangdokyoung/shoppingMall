@@ -48,7 +48,7 @@ const SNoticeList = styled.li`
   border-bottom: 1px solid black;
 `;
 
-function MainNotice() {
+const MainNotice: React.FC = () => {
   return (
     <Scontainer>
       <SNotice>
@@ -61,6 +61,6 @@ function MainNotice() {
       </SNotice>
     </Scontainer>
   );
-}
+};
 
 export default MainNotice;

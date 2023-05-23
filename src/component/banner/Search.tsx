@@ -56,7 +56,7 @@ const SinputBtn = styled.button`
   font-size: 20px;
 `;
 
-function Search() {
+const Search: React.FC = () => {
   const searchToggle = useSelector(
     (state: RootState) => state.search.searchToggle
   );
@@ -68,6 +68,6 @@ function Search() {
       <SinputBtn>GO</SinputBtn>
     </Scontainer>
   );
-}
+};
 
 export default Search;

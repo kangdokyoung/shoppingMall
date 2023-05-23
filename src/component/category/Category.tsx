@@ -33,7 +33,7 @@ const ScatDetail = styled.li`
   }
 `;
 
-function Category() {
+const Category: React.FC = () => {
   return (
     <Scontainer>
       <ScatList>
@@ -44,6 +44,6 @@ function Category() {
       </ScatList>
     </Scontainer>
   );
-}
+};
 
 export default Category;

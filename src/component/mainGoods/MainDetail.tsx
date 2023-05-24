@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DetailModal from "./DetailModal";
+import { Link } from "react-router-dom";
 
 const Scontainer = styled.div`
   width: 300px;
@@ -45,9 +46,14 @@ const MainDetail: React.FC = () => {
     <Scontainer>
       <DetailModal />
       <SgoodsBox>
-        <SImgBox>
-          <SgoodsImg alt="상품 이미지" />
-        </SImgBox>
+        <Link
+          to={"/detailGoods"}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <SImgBox>
+            <SgoodsImg alt="상품 이미지" />
+          </SImgBox>
+        </Link>
         <SgoodsName>
           <SnameSpace>상품 이름</SnameSpace>
         </SgoodsName>

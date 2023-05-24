@@ -10,6 +10,7 @@ import QnaPage from "./page/QnaPage";
 import BasketPage from "./page/BasketPage";
 import OrderDetailPage from "./page/OrderDetailPage";
 import { RecoilRoot } from "recoil";
+import DetailGoodsPage from "./page/DetailGoodsPage";
 
 const GlobalStyle = createGlobalStyle`
 *, *::before, *::after {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             <Route path="/qna" element={<QnaPage />} />
             <Route path="/basket" element={<BasketPage />} />
             <Route path="/orderDetail" element={<OrderDetailPage />} />
+            <Route path="/detailGoods" element={<DetailGoodsPage />} />
           </Routes>
         </BrowserRouter>
       }

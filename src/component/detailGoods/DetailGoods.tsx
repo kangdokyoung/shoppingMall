@@ -8,6 +8,8 @@ const Scontainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
   width: 100%;
   padding: 30px;
 `;
@@ -83,10 +85,42 @@ const SdeleteGoodsBtn = styled.button`
   font-size: 20px;
 `;
 
+const SgoodsDetailContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+`;
+
+const StitleBox = styled.div`
+  padding-left: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  display: flex;
+  width: 80%;
+  justify-content: left;
+`;
+
+const Stitle = styled.div`
+  width: 15%;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.1s;
+  overflow: hidden;
+  :hover {
+    transform: translateY(-5px);
+    border: 1px solid black;
+    box-shadow: 1px 2px grey;
+  }
+`;
+
 const DetailGoods: React.FC = () => {
   const [option1, setOption1] = useState("");
   const [option2, setOption2] = useState("");
-  const [price, setPrice] = useState(3000);
+  const [price, setPrice] = useState(100000000000);
   const [sold, setSold] = useState(false);
 
   return (
@@ -99,8 +133,6 @@ const DetailGoods: React.FC = () => {
           <SgoodsName>상품 이름</SgoodsName>
           <FormControl fullWidth>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               value={option1}
               onChange={(e) => setOption1(e.target.value)}
               displayEmpty
@@ -113,8 +145,6 @@ const DetailGoods: React.FC = () => {
           </FormControl>
           <FormControl fullWidth>
             <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
               value={option2}
               onChange={(e) => setOption2(e.target.value)}
               displayEmpty
@@ -139,6 +169,12 @@ const DetailGoods: React.FC = () => {
           <SdeleteGoodsBtn>상품 내리기</SdeleteGoodsBtn>
         </SgoodsInfoContainer>
       </SgoodsContainer>
+      <SgoodsDetailContainer>
+        <StitleBox>
+          <Stitle>상세 정보</Stitle>
+          <Stitle>리뷰 보러가기</Stitle>
+        </StitleBox>
+      </SgoodsDetailContainer>
     </Scontainer>
   );
 };
